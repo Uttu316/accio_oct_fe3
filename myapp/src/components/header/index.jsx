@@ -1,11 +1,20 @@
+import logo from "../../assets/react.svg";
+import "./header.css";
+
 const Header = () => {
   return (
-    <header>
-      <img />
-      <h1>My App</h1>
-      <nav>
-        <a href="#">Contact</a>
-        <a href="#">About</a>
+    <header className="header">
+      <div className="header_brand">
+        <img className="header_logo" src={logo} alt="logo" />
+        <h1 className="header_title">My App</h1>
+      </div>
+      <nav className="header_nav">
+        <a className="header_link" href="#">
+          Contact
+        </a>
+        <a className="header_link" href="#">
+          About
+        </a>
       </nav>
     </header>
   );
