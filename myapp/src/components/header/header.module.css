@@ -22,7 +22,9 @@
 .header_title {
   font-size: 22px;
   font-weight: 600;
-  color: #f3f4f6;
+}
+.text {
+  color: white;
 }
 
 .header_nav {

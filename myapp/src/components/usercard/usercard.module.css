@@ -104,6 +104,9 @@
   font-weight: 700;
   letter-spacing: -0.2px;
 }
+.text {
+  color: blue;
+}
 
 .usercard_email {
   font-size: 13px;
