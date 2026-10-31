@@ -1,16 +1,11 @@
-import Footer from "./components/footer";
-import Header from "./components/header";
-import "./App.css";
-import UserList from "./components/userlist";
-import Counter from "./components/counter";
+import PracticePage from "./pages/practice";
+import ProductsPage from "./pages/products";
 
 const App = () => {
   return (
     <div>
-      <Header />
-      <UserList />
-      <Counter />
-      <Footer />
+      {/* <PracticePage /> */}
+      <ProductsPage />
     </div>
   );
 };

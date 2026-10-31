@@ -1,4 +1,5 @@
 import { useState } from "react";
+import styles from "./counter.module.css";
 
 const Counter = () => {
   const [x, setX] = useState(0);
@@ -17,12 +18,19 @@ const Counter = () => {
   };
 
   return (
-    <div>
-      <h2>Counter</h2>
-      <h3>{x}</h3>
-      <div>
-        <button onClick={onAdd}>Add</button>
-        <button onClick={onMinus}>Minus</button>
+    <div className={styles.counter}>
+      <h2 className={styles.title}>Counter</h2>
+      <h3 className={styles.value}>{x}</h3>
+      <div className={styles.actions}>
+        <button className={`${styles.btn} ${styles.btnAdd}`} onClick={onAdd}>
+          Add
+        </button>
+        <button
+          className={`${styles.btn} ${styles.btnMinus}`}
+          onClick={onMinus}
+        >
+          Minus
+        </button>
       </div>
     </div>
   );
