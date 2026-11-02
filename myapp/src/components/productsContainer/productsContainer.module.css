@@ -1,0 +1,271 @@
+.container {
+  padding: 72px 32px 90px;
+  min-height: 100vh;
+  background:
+    radial-gradient(
+      circle at 25% 15%,
+      rgba(148, 163, 184, 0.25),
+      transparent 45%
+    ),
+    radial-gradient(
+      circle at 80% 85%,
+      rgba(100, 116, 139, 0.22),
+      transparent 50%
+    ),
+    linear-gradient(160deg, #f4f5f7 0%, #e8eaef 100%);
+}
+
+.heading {
+  font-size: 34px;
+  font-weight: 700;
+  letter-spacing: -0.8px;
+  text-align: center;
+  color: #1e2230;
+  margin-bottom: 8px;
+}
+
+.heading::after {
+  content: "";
+  display: block;
+  width: 44px;
+  height: 3px;
+  margin: 14px auto 0;
+  border-radius: 999px;
+  background: #1e2230;
+  opacity: 0.25;
+}
+
+/* State cards: error & empty */
+.state {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  max-width: 420px;
+  margin: 56px auto;
+  padding: 40px 32px;
+  border-radius: 22px;
+  background: rgba(255, 255, 255, 0.5);
+  border: 1px solid rgba(255, 255, 255, 0.75);
+  box-shadow:
+    0 12px 32px rgba(30, 34, 48, 0.1),
+    inset 0 1px 1px rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(18px) saturate(150%);
+  -webkit-backdrop-filter: blur(18px) saturate(150%);
+}
+
+.stateIcon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 64px;
+  height: 64px;
+  margin-bottom: 20px;
+  font-size: 28px;
+  border-radius: 50%;
+  background: rgba(30, 34, 48, 0.05);
+  border: 1px solid rgba(30, 34, 48, 0.08);
+}
+
+.stateError .stateIcon {
+  color: #dc2626;
+  background: rgba(220, 38, 38, 0.1);
+  border-color: rgba(220, 38, 38, 0.2);
+}
+
+.stateTitle {
+  font-size: 19px;
+  font-weight: 700;
+  letter-spacing: -0.3px;
+  color: #1e2230;
+  margin-bottom: 8px;
+}
+
+.stateText {
+  font-size: 14px;
+  line-height: 1.6;
+  color: rgba(30, 34, 48, 0.6);
+  margin-bottom: 24px;
+}
+
+.stateBtn {
+  padding: 10px 24px;
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 0.2px;
+  cursor: pointer;
+  border-radius: 12px;
+  color: #ffffff;
+  background: #1e2230;
+  border: none;
+  transition:
+    transform 0.15s ease,
+    opacity 0.2s ease;
+}
+
+.stateBtn:hover {
+  transform: translateY(-2px);
+  opacity: 0.9;
+}
+
+.stateBtn:active {
+  transform: translateY(0);
+}
+
+.content {
+  max-width: 1240px;
+  margin: 44px auto 0;
+}
+
+/* Filters */
+.filters {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 48px;
+}
+
+.filterBtn {
+  padding: 9px 20px;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.2px;
+  cursor: pointer;
+  border-radius: 999px;
+  color: rgba(30, 34, 48, 0.7);
+  background: rgba(255, 255, 255, 0.45);
+  border: 1px solid rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(12px) saturate(140%);
+  -webkit-backdrop-filter: blur(12px) saturate(140%);
+  transition:
+    color 0.2s ease,
+    background 0.2s ease,
+    border-color 0.2s ease;
+}
+
+.filterBtn:hover {
+  color: #1e2230;
+  background: rgba(255, 255, 255, 0.7);
+}
+
+.filterBtnActive {
+  color: #ffffff;
+  background: #1e2230;
+  border-color: #1e2230;
+}
+
+/* Product grid */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 24px;
+  max-width: 1240px;
+  margin: 0 auto;
+}
+
+/* Loader — skeleton filters */
+.skeletonFilters {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 48px;
+}
+
+.skeletonFilter {
+  height: 36px;
+  border-radius: 999px;
+}
+
+/* Loader — skeleton grid */
+.skeletonGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 24px;
+  max-width: 1240px;
+  margin: 0 auto;
+}
+
+.skeletonCard {
+  display: flex;
+  flex-direction: column;
+  border-radius: 20px;
+  overflow: hidden;
+  background: rgba(255, 255, 255, 0.5);
+  border: 1px solid rgba(255, 255, 255, 0.75);
+  box-shadow:
+    0 8px 24px rgba(30, 34, 48, 0.07),
+    inset 0 1px 1px rgba(255, 255, 255, 0.9);
+  backdrop-filter: blur(18px) saturate(140%);
+  -webkit-backdrop-filter: blur(18px) saturate(140%);
+}
+
+.skeletonImage {
+  height: 180px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.6);
+}
+
+.skeletonBody {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 20px;
+}
+
+.skeletonLine {
+  height: 12px;
+  border-radius: 6px;
+}
+
+.skeletonLineLg {
+  width: 75%;
+  height: 16px;
+}
+
+.skeletonLineSm {
+  width: 45%;
+}
+
+.skeletonFooter {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 8px;
+  padding-top: 16px;
+  border-top: 1px solid rgba(30, 34, 48, 0.08);
+}
+
+.skeletonPrice {
+  width: 70px;
+  height: 20px;
+  border-radius: 8px;
+}
+
+.skeletonBtn {
+  width: 96px;
+  height: 34px;
+  border-radius: 12px;
+}
+
+/* Shimmer applied to every placeholder block */
+.skeletonFilter,
+.skeletonImage,
+.skeletonLine,
+.skeletonPrice,
+.skeletonBtn {
+  background: linear-gradient(
+    100deg,
+    rgba(30, 34, 48, 0.06) 30%,
+    rgba(30, 34, 48, 0.12) 50%,
+    rgba(30, 34, 48, 0.06) 70%
+  );
+  background-size: 200% 100%;
+  animation: shimmer 1.4s ease-in-out infinite;
+}
+
+@keyframes shimmer {
+  to {
+    background-position: -200% 0;
+  }
+}
