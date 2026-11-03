@@ -12,10 +12,14 @@ const ProductsContainer = () => {
   const getProducts = async () => {
     try {
       const res = await fetch("https://dummyjson.com/products");
-      const data = await res.json();
+      if (res.status >= 200 && res.status < 400) {
+        const data = await res.json();
 
-      setProducts(data.products);
-      setStatus("done");
+        setProducts(data.products);
+        setStatus("done");
+        return;
+      }
+      throw res;
     } catch (e) {
       console.error(e);
       setStatus("error");

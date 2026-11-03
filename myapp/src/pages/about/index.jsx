@@ -1,6 +1,5 @@
-import Header from "../../components/header";
-import Footer from "../../components/footer";
 import styles from "./about.module.css";
+import PageWrapper from "../../components/pageWrapper";
 
 const VALUES = [
   {
@@ -45,9 +44,7 @@ const TEAM = [
 
 const AboutPage = () => {
   return (
-    <div className={styles.page}>
-      <Header title="Lumina" />
-
+    <PageWrapper className={styles.page}>
       {/* Hero */}
       <section className={styles.hero}>
         <span className={styles.kicker}>Our Story</span>
@@ -130,9 +127,7 @@ const AboutPage = () => {
           ))}
         </div>
       </section>
-
-      <Footer />
-    </div>
+    </PageWrapper>
   );
 };
 

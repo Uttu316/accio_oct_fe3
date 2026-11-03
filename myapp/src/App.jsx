@@ -5,6 +5,8 @@ import AboutPage from "./pages/about";
 import ContactPage from "./pages/contact";
 
 import { BrowserRouter, Route, Routes } from "react-router";
+import ProductPage from "./pages/product";
+import NotFoundPage from "./pages/notFound";
 const App = () => {
   return (
     <BrowserRouter>
@@ -14,6 +16,8 @@ const App = () => {
         <Route path="/contact" element={<ContactPage />} />
         <Route path="/practice" element={<PracticePage />} />
         <Route path="/products" element={<ProductsPage />} />
+        <Route path="/product/:productId" element={<ProductPage />} />
+        <Route path="*" element={<NotFoundPage />} />
       </Routes>
     </BrowserRouter>
   );

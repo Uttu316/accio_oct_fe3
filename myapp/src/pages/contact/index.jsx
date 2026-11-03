@@ -1,6 +1,5 @@
-import Header from "../../components/header";
-import Footer from "../../components/footer";
 import styles from "./contact.module.css";
+import PageWrapper from "../../components/pageWrapper";
 
 const INFO = [
   {
@@ -22,9 +21,7 @@ const INFO = [
 
 const ContactPage = () => {
   return (
-    <div className={styles.page}>
-      <Header title="Lumina" />
-
+    <PageWrapper className={styles.page}>
       <section className={styles.hero}>
         <span className={styles.kicker}>Get in Touch</span>
         <h1 className={styles.title}>We'd love to hear from you</h1>
@@ -105,9 +102,7 @@ const ContactPage = () => {
           <button className={styles.submit}>Send Message</button>
         </div>
       </section>
-
-      <Footer />
-    </div>
+    </PageWrapper>
   );
 };
 

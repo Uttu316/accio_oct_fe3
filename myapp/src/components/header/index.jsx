@@ -15,6 +15,7 @@ const Header = ({ title }) => {
         </h1>
       </div>
       <nav className={style.header_nav}>
+        <NavItem label={"Products"} link={"/products"} />
         <NavItem label={"About"} link={"/about"} />
         <NavItem label={"Contact"} link={"/contact"} />
       </nav>

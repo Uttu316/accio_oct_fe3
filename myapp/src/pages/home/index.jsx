@@ -1,7 +1,6 @@
-import Header from "../../components/header";
-import Footer from "../../components/footer";
 import styles from "./home.module.css";
 import { useNavigate } from "react-router";
+import PageWrapper from "../../components/pageWrapper";
 
 const FEATURES = [
   {
@@ -74,9 +73,7 @@ const TESTIMONIALS = [
 const HomePage = () => {
   const navigate = useNavigate();
   return (
-    <div className={styles.page}>
-      <Header title="Lumina" />
-
+    <PageWrapper className={styles.page}>
       {/* Hero */}
       <section className={styles.hero}>
         <div>
@@ -227,9 +224,7 @@ const HomePage = () => {
           </div>
         </div>
       </section>
-
-      <Footer />
-    </div>
+    </PageWrapper>
   );
 };
 
