@@ -131,7 +131,8 @@
   letter-spacing: -0.4px;
 }
 
-.cartBtn {
+.cartBtn,
+.removeBtn {
   padding: 9px 18px;
   font-size: 13px;
   font-weight: 600;
@@ -146,11 +147,16 @@
     opacity 0.2s ease;
 }
 
-.cartBtn:hover {
+.cartBtn:hover,
+.removeBtn:hover {
   transform: translateY(-2px);
   opacity: 0.9;
 }
 
-.cartBtn:active {
+.cartBtn:active,
+.removeBtn:active {
   transform: translateY(0);
+}
+.removeBtn {
+  background: salmon;
 }

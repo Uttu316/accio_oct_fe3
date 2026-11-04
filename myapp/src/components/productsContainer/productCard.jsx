@@ -1,5 +1,7 @@
 import { Link } from "react-router";
 import styles from "./productCard.module.css";
+import { useContext } from "react";
+import { CartContext } from "../../contexts/CartContext";
 
 const ProductCard = ({ product }) => {
   const {
@@ -13,6 +15,20 @@ const ProductCard = ({ product }) => {
     discountPercentage,
     rating,
   } = product;
+
+  const { addToCart, removeFromCart, isInCart } = useContext(CartContext);
+
+  const onAddCart = (e) => {
+    e.preventDefault(); //stops the link to navigate
+    addToCart(product);
+  };
+
+  const onRemoveCart = (e) => {
+    e.preventDefault();
+    removeFromCart(id);
+  };
+
+  const inCart = isInCart(id);
   return (
     <Link to={"/product/" + id} className={styles.cardlink}>
       <div className={styles.card}>
@@ -32,7 +48,16 @@ const ProductCard = ({ product }) => {
           </div>
           <div className={styles.priceRow}>
             <span className={styles.price}>${price}</span>
-            <button className={styles.cartBtn}>Add to Cart</button>
+            {!inCart && (
+              <button onClick={onAddCart} className={styles.cartBtn}>
+                Add to Cart
+              </button>
+            )}
+            {inCart && (
+              <button onClick={onRemoveCart} className={styles.removeBtn}>
+                Remove From Cart
+              </button>
+            )}
           </div>
         </div>
       </div>

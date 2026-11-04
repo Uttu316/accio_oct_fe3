@@ -1,9 +1,11 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
 import styles from "./productDetails.module.css";
+import { CartContext } from "../../contexts/CartContext";
 
 const ProductDetails = ({ product }) => {
   const [currentImage, setCurrentImage] = useState(0);
   const {
+    id,
     title,
     description,
     category,
@@ -30,6 +32,9 @@ const ProductDetails = ({ product }) => {
   const oldPrice = (price / (1 - discountPercentage / 100)).toFixed(2);
   const fullStars = Math.round(rating);
 
+  const { addToCart, removeFromCart, isInCart } = useContext(CartContext);
+
+  const inCart = isInCart(id);
   return (
     <div className={styles.page}>
       <div className={styles.layout}>
@@ -111,7 +116,22 @@ const ProductDetails = ({ product }) => {
 
           <div className={styles.actions}>
             <button className={styles.buyBtn}>Buy Now</button>
-            <button className={styles.cartBtn}>Add to Cart</button>
+            {!inCart && (
+              <button
+                onClick={() => addToCart(product)}
+                className={styles.cartBtn}
+              >
+                Add to Cart
+              </button>
+            )}
+            {inCart && (
+              <button
+                onClick={() => removeFromCart(id)}
+                className={styles.removeBtn}
+              >
+                Remove From Cart
+              </button>
+            )}
           </div>
         </div>
       </div>

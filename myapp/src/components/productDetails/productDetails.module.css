@@ -264,7 +264,8 @@
   opacity: 0.92;
 }
 
-.cartBtn {
+.cartBtn,
+.removeBtn {
   flex: 1;
   padding: 16px 0;
   font-size: 15px;
@@ -287,6 +288,14 @@
   background: rgba(255, 255, 255, 0.85);
 }
 
+.removeBtn {
+  background-color: salmon;
+  color: white;
+}
+.removeBtn:hover {
+  background-color: rgb(203, 118, 109);
+  transform: translateY(-2px);
+}
 .minOrder {
   font-size: 12px;
   color: rgba(30, 34, 48, 0.5);
