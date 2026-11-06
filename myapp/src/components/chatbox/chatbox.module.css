@@ -1,0 +1,325 @@
+.chatbox {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 560px;
+  margin: 0 auto;
+}
+
+.chatTopBar {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 0 4px 16px;
+}
+
+.agentAvatar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  font-size: 20px;
+  border-radius: 50%;
+  color: #ffffff;
+  background: linear-gradient(135deg, #1e2230, #3b4256);
+  box-shadow: 0 6px 16px rgba(30, 34, 48, 0.25);
+}
+
+.agentName {
+  font-size: 15px;
+  font-weight: 700;
+}
+
+.agentStatus {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 12px;
+  color: rgba(30, 34, 48, 0.55);
+}
+
+.statusDot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #22c55e;
+  box-shadow: 0 0 0 3px rgba(34, 197, 94, 0.2);
+}
+
+/* ---------- Chat list (fixed height, scrollable) ---------- */
+.list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  height: 440px;
+  overflow-y: auto;
+  padding: 20px 20px;
+  scroll-behavior: smooth;
+}
+
+.list::-webkit-scrollbar {
+  width: 6px;
+}
+
+.list::-webkit-scrollbar-thumb {
+  background: rgba(30, 34, 48, 0.15);
+  border-radius: 999px;
+}
+
+/* ---------- Message bubbles ---------- */
+.message {
+  display: flex;
+  flex-direction: column;
+  max-width: 76%;
+  gap: 4px;
+}
+
+.messageMe {
+  align-self: flex-end;
+  align-items: flex-end;
+}
+
+.messageBot {
+  align-self: flex-start;
+  align-items: flex-start;
+}
+
+.bubble {
+  padding: 13px 17px;
+  font-size: 14px;
+  line-height: 1.5;
+  border-radius: 20px;
+  backdrop-filter: blur(14px) saturate(160%);
+  -webkit-backdrop-filter: blur(14px) saturate(160%);
+}
+
+.bubbleMe {
+  color: #ffffff;
+  background: linear-gradient(
+    135deg,
+    rgba(30, 34, 48, 0.95),
+    rgba(59, 66, 86, 0.9)
+  );
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-bottom-right-radius: 6px;
+  box-shadow: 0 10px 26px rgba(30, 34, 48, 0.25);
+}
+
+.bubbleBot {
+  color: #1e2230;
+  background: rgba(255, 255, 255, 0.55);
+  border: 1px solid rgba(255, 255, 255, 0.8);
+  border-bottom-left-radius: 6px;
+  box-shadow: 0 10px 26px rgba(30, 34, 48, 0.1);
+}
+
+.meta {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 0 6px;
+  font-size: 11px;
+  color: rgba(30, 34, 48, 0.45);
+}
+
+/* ---------- Empty state ---------- */
+.empty {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  height: 100%;
+  margin: auto;
+  padding: 20px;
+}
+
+.emptyIcon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 72px;
+  height: 72px;
+  font-size: 32px;
+  border-radius: 50%;
+  margin-bottom: 18px;
+  color: #1e2230;
+  background: rgba(255, 255, 255, 0.5);
+  border: 1px solid rgba(255, 255, 255, 0.8);
+  box-shadow: 0 12px 30px rgba(30, 34, 48, 0.12);
+}
+
+.emptyTitle {
+  font-size: 17px;
+  font-weight: 700;
+  margin-bottom: 6px;
+}
+
+.emptyText {
+  font-size: 13px;
+  line-height: 1.6;
+  color: rgba(30, 34, 48, 0.55);
+  max-width: 300px;
+}
+
+/* ---------- Input (footer of chat list) ---------- */
+.inputBar {
+  display: flex;
+  align-items: flex-end;
+  gap: 10px;
+  margin-top: 8px;
+  padding: 10px 10px 10px 18px;
+  border-radius: 22px;
+  background: rgba(255, 255, 255, 0.55);
+  border: 1px solid rgba(255, 255, 255, 0.8);
+  box-shadow:
+    0 12px 32px rgba(30, 34, 48, 0.1),
+    inset 0 1px 1px rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(16px) saturate(150%);
+  -webkit-backdrop-filter: blur(16px) saturate(150%);
+}
+
+.textarea {
+  flex: 1;
+  resize: none;
+  border: none;
+  outline: none;
+  background: transparent;
+  font-family: inherit;
+  font-size: 14px;
+  line-height: 1.5;
+  color: #1e2230;
+  max-height: 110px;
+  padding: 8px 0;
+}
+
+.textarea::placeholder {
+  color: rgba(30, 34, 48, 0.4);
+}
+
+.iconActions {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.iconBtn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 38px;
+  height: 38px;
+  font-size: 17px;
+  cursor: pointer;
+  border-radius: 50%;
+  color: rgba(30, 34, 48, 0.55);
+  background: transparent;
+  border: none;
+  transition:
+    background 0.15s ease,
+    color 0.15s ease;
+}
+
+.iconBtn:hover {
+  background: rgba(30, 34, 48, 0.08);
+  color: #1e2230;
+}
+
+.sendBtn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  font-size: 18px;
+  cursor: pointer;
+  border-radius: 50%;
+  color: #ffffff;
+  background: #1e2230;
+  border: none;
+  box-shadow: 0 8px 18px rgba(30, 34, 48, 0.3);
+  transition:
+    transform 0.15s ease,
+    opacity 0.2s ease;
+}
+
+.sendBtn:hover {
+  transform: translateY(-2px);
+  opacity: 0.92;
+}
+
+.sendBtn:active {
+  transform: translateY(0);
+}
+
+/* ---------- Typing indicator (waiting for AI) ---------- */
+.typing {
+  align-self: flex-start;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 14px 18px;
+  border-radius: 20px;
+  border-bottom-left-radius: 6px;
+  background: rgba(255, 255, 255, 0.55);
+  border: 1px solid rgba(255, 255, 255, 0.8);
+  box-shadow: 0 10px 26px rgba(30, 34, 48, 0.1);
+  backdrop-filter: blur(14px) saturate(160%);
+  -webkit-backdrop-filter: blur(14px) saturate(160%);
+}
+
+.typingDot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: rgba(30, 34, 48, 0.45);
+  animation: typingBounce 1.3s infinite ease-in-out;
+}
+
+.typingDot:nth-child(2) {
+  animation-delay: 0.18s;
+}
+
+.typingDot:nth-child(3) {
+  animation-delay: 0.36s;
+}
+
+@keyframes typingBounce {
+  0%,
+  60%,
+  100% {
+    transform: translateY(0);
+    opacity: 0.4;
+  }
+  30% {
+    transform: translateY(-5px);
+    opacity: 1;
+  }
+}
+
+/* ---------- Error row ---------- */
+.error {
+  align-self: center;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  max-width: 90%;
+  padding: 12px 18px;
+  border-radius: 16px;
+  font-size: 13px;
+  font-weight: 500;
+  color: #b91c1c;
+  background: rgba(244, 63, 94, 0.1);
+  border: 1px solid rgba(244, 63, 94, 0.25);
+  box-shadow: 0 8px 20px rgba(244, 63, 94, 0.12);
+  backdrop-filter: blur(12px) saturate(150%);
+  -webkit-backdrop-filter: blur(12px) saturate(150%);
+}
+
+.errorIcon {
+  display: flex;
+  align-items: center;
+  font-size: 16px;
+  flex-shrink: 0;
+}

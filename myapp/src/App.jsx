@@ -9,6 +9,7 @@ import ProductPage from "./pages/product";
 import NotFoundPage from "./pages/notFound";
 import CartPage from "./pages/cart";
 import CartProvider from "./contexts/CartContext";
+import SupportPage from "./pages/support";
 const App = () => {
   return (
     <CartProvider>
@@ -21,6 +22,7 @@ const App = () => {
           <Route path="/products" element={<ProductsPage />} />
           <Route path="/product/:productId" element={<ProductPage />} />
           <Route path="/cart" element={<CartPage />} />
+          <Route path="/support" element={<SupportPage />} />
           <Route path="*" element={<NotFoundPage />} />
         </Routes>
       </BrowserRouter>
